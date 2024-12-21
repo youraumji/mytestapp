@@ -11,28 +11,48 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-        ),
-        home: Scaffold(
-          appBar: AppBar(
-            title: const Text(
-              'Flutter Demo',
-              style: TextStyle(color: Colors.white),
-            ),
-            leading: const Icon(Icons.add),
-            backgroundColor: Colors.purple,
+      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text(
+            'Flutter Demo',
+            style: TextStyle(color: Colors.white),
           ),
-          body: Container(
-              height: 100,
-              width: 100,
-              color: Colors.orange,
-              padding: const EdgeInsets.all(20),
-              margin: const EdgeInsets.all(20),
-              child: const Text('Hello')),
+          leading: const Icon(Icons.add),
+          backgroundColor: Colors.purple,
+        ),
+        /*body: Container(
+            color: Colors.grey,
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Container(
+                      height: 150,
+                      width: 100,
+                      color: Colors.red,
+                      child: const Text("Item 1",
+                          style: TextStyle(color: Colors.white))),
+                  Container(
+                      height: 50,
+                      width: 50,
+                      color: Colors.green,
+                      child: const Text("Item 2",
+                          style: TextStyle(color: Colors.pink))),
+                  Container(
+                      height: 50,
+                      width: 50,
+                      color: Colors.yellow,
+                      child: const Text("Item 3",
+                          style: TextStyle(color: Colors.blue))),
+                ]),
+          ),
           floatingActionButton: FloatingActionButton(
             onPressed: () {
               print("Hello");
@@ -40,6 +60,56 @@ class MyApp extends StatelessWidget {
             child: const Icon(Icons.phone),
           ),
         ));
+  }
+}*/
+        /*body: Container(
+              color: Colors.grey,
+              child: Row(
+                children: [
+                  Container(
+                    color: Colors.yellow,
+                    height: 100,
+                    width: 50,
+                  ),
+                  Expanded(
+                      flex: 2,
+                      child: Container(
+                        color: Colors.red,
+                        height: 100,
+                      )),
+                  Expanded(
+                      flex: 3,
+                      child: Container(
+                        color: Colors.blue,
+                        height: 100,
+                      ))
+                ],
+              )),
+          floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              print("Hello");
+            },
+            child: const Icon(Icons.phone),
+          ),
+        ));
+  }
+}*/
+        body: Center(
+          child: ElevatedButton(
+            onPressed: () {
+              print("Pressed!");
+            },
+            child: const Text("Click Me"),
+          ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            print("Hello");
+          },
+          child: const Icon(Icons.phone),
+        ),
+      ),
+    );
   }
 }
 
