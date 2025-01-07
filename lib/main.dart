@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:mytestapp/my_stateful_widget.dart';
+import 'package:mytestapp/page_answer/answer1.dart';
+import 'package:mytestapp/page_answer/answer2.dart';
+import 'package:mytestapp/page_answer/answer3.dart';
+import 'package:mytestapp/page_answer/answer4.dart';
+import 'package:mytestapp/page_answer/answer_portal.dart';
 
 void main() {
   runApp(const MyApp());
@@ -7,7 +13,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,97 +22,24 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            'Flutter Demo',
-            style: TextStyle(color: Colors.white),
-          ),
-          leading: const Icon(Icons.add),
-          backgroundColor: Colors.purple,
-        ),
-        /*body: Container(
-            color: Colors.grey,
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Container(
-                      height: 150,
-                      width: 100,
-                      color: Colors.red,
-                      child: const Text("Item 1",
-                          style: TextStyle(color: Colors.white))),
-                  Container(
-                      height: 50,
-                      width: 50,
-                      color: Colors.green,
-                      child: const Text("Item 2",
-                          style: TextStyle(color: Colors.pink))),
-                  Container(
-                      height: 50,
-                      width: 50,
-                      color: Colors.yellow,
-                      child: const Text("Item 3",
-                          style: TextStyle(color: Colors.blue))),
-                ]),
-          ),
-          floatingActionButton: FloatingActionButton(
-            onPressed: () {
-              print("Hello");
-            },
-            child: const Icon(Icons.phone),
-          ),
-        ));
+      home: const answer_portal(),
+    );
   }
-}*/
-        /*body: Container(
-              color: Colors.grey,
-              child: Row(
-                children: [
-                  Container(
-                    color: Colors.yellow,
-                    height: 100,
-                    width: 50,
-                  ),
-                  Expanded(
-                      flex: 2,
-                      child: Container(
-                        color: Colors.red,
-                        height: 100,
-                      )),
-                  Expanded(
-                      flex: 3,
-                      child: Container(
-                        color: Colors.blue,
-                        height: 100,
-                      ))
-                ],
-              )),
-          floatingActionButton: FloatingActionButton(
-            onPressed: () {
-              print("Hello");
-            },
-            child: const Icon(Icons.phone),
-          ),
-        ));
-  }
-}*/
-        body: Center(
-          child: ElevatedButton(
-            onPressed: () {
-              print("Pressed!");
-            },
-            child: const Text("Click Me"),
-          ),
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            print("Hello");
-          },
-          child: const Icon(Icons.phone),
-        ),
+}
+
+class GreetingWidget extends StatelessWidget {
+  final String name;
+  const GreetingWidget({super.key, required this.name});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Demo APP'),
+        backgroundColor: Colors.orange,
+      ),
+      body: Center(
+        child: Text('Hello, $name'),
       ),
     );
   }
